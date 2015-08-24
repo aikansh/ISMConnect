@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
 <html>
 <head>
 <spring:url value="/resources/core/css/main.css" var="coreCss" />
@@ -91,7 +90,8 @@
 										type="password" name="form-password" placeholder="Password..."
 										class="form-password form-control" id="form-password">
 								</div>
-								<button type="submit" class="btn">Sign in!</button>
+								<button type="submit" class="btn">Sign in!</button> <br>
+								Not registered yet? <a href="/signup">Sign up</a> now!
 							</form>
 						</div>
 					</div>
