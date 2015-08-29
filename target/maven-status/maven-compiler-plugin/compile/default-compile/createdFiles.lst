@@ -1,4 +1,9 @@
 com\ismconnect\util\SignupConstants.class
+com\ismconnect\controller\LoginController.class
+com\ismconnect\controller\SignupController.class
+com\ismconnect\dal\data\UserDetail.class
+com\ismconnect\dal\repo\UserRepository.class
+com\ismconnect\controller\HomeController.class
 com\ismconnect\util\Validation.class
-com\ismconnect\login\SignupController.class
-com\ismconnect\home\HomeController.class
+com\ismconnect\dal\data\UserDetail$Role.class
+com\ismconnect\dal\data\UserDetail$SocialMediaService.class

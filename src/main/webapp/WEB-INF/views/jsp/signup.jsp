@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page import="com.googlecode.objectify.Key"%>
+<%@ page import="com.googlecode.objectify.ObjectifyService"%>
 <html>
 <head>
 <spring:url value="/resources/core/css/main.css" var="coreCss" />
@@ -65,40 +67,43 @@
 							</div>
 						</div>
 						<div class="form-bottom">
-							<form id="registrationForm" class="form-horizontal">
-								<div class="form-group">
-									<label class="sr-only" for="fname">Full Name</label> <input
-										type="text" class="form-control" name="fname"
-										placeholder="Full Name..." />
+							<form id="registrationForm" class="form-horizontal"
+								action="/saveuser" method="post">
+								<div class="form-group inner-addon">
+									<label class="sr-only">Full Name</label> <span
+										class="glyphicon glyphicon-user"
+										style="left: 2px; line-height: 2"></span> <input type="text"
+										class=" form-control" name="fname"
+										placeholder="     Full Name" />
 								</div>
 
-								<div class="form-group">
-									<label class="sr-only" for="username">Username</label> <input
-										name="username" placeholder="Username..." />
-								</div>
-
-								<div class="form-group">
-									<label class="sr-only" for="password">Password</label> <input
+								<div class="form-group inner-addon">
+									<label class="sr-only" for="password">Password</label> <span
+										class="glyphicon glyphicon-lock"
+										style="left: 2px; line-height: 2"></span> <input
 										type="password" class="form-control" name="password"
-										placeholder="Password..." />
+										placeholder="     Password" />
+
 								</div>
 
-								<div class="form-group">
-									<label class="sr-only" for="email">Email address</label> <i
-										class="icon-mail"></i> <input type="text" class="form-control"
-										name="email" placeholder="Email address..." />
+								<div class="form-group inner-addon">
+									<label class="sr-only" for="Email">Email</label> <span
+										class="glyphicon glyphicon-envelope"
+										style="left: 2px; line-height: 2"></span> <input type="text"
+										class="form-control" name="email" placeholder="     Email" />
 								</div>
 
-								<div class="form-group">
-									<label class="sr-only" for="phone">Phone</label> <input
-										type="text" class="form-control" name="phone"
-										placeholder="Mobile..." />
+								<div class="form-group inner-addon">
+									<label class="sr-only" for="phone">Phone</label> <span
+										class="glyphicon glyphicon-earphone"
+										style="left: 2px; line-height: 2"></span> <input type="text"
+										class="form-control" name="phone" placeholder="     Phone" />
 								</div>
-
-								<div class="form-group">
-									<label class="sr-only" for="batch">Batch</label> <input
-										type="text" class="form-control" name="batch"
-										placeholder="Batch..." />
+								<div class="form-group inner-addon">
+									<label class="sr-only" for="batch">Batch</label> <span
+										class="glyphicon glyphicon-pencil"
+										style="left: 2px; line-height: 2"></span> <input type="text"
+										class="form-control" name="batch" placeholder="     Batch" />
 								</div>
 
 								<div class="form-radio">
@@ -113,8 +118,6 @@
 								<button type="submit" class="btn" name="signup" value="Sign up">Sign
 									up!</button>
 							</form>
-
-
 						</div>
 					</div>
 				</div>
@@ -133,7 +136,7 @@
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-	
+
 	<!--[if lt IE 10]>
             <script src="/resources/core/js/placeholder.js"></script>
         <![endif]-->

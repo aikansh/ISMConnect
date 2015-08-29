@@ -5,7 +5,17 @@
 	version="2.5">
 	
 	<display-name>Spring3 MVC Application</display-name>
-
+ <filter>
+  <filter-name>ObjectifyFilter</filter-name>
+  <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+</filter>
+<filter-mapping>
+  <filter-name>ObjectifyFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+<listener>
+  <listener-class>com.ismconnect.dal.helper.OfyHelper</listener-class>
+</listener>
 	<servlet>
 		<servlet-name>spring-web</servlet-name>
 		<servlet-class>
@@ -18,8 +28,8 @@
 		<servlet-name>spring-web</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
 	
+
 	
 </web-app>
 

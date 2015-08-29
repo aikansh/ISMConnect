@@ -1,3 +1,6 @@
+<%@page import="com.ismconnect.dal.repo.UserRepository"%>
+<%@page import="com.ismconnect.dal.data.UserDetail"%>
+<%@page import="com.ismconnect.dal.repo.UserRepositoryImpl"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
@@ -59,11 +62,8 @@
 							<strong>Welcome to ISM Connect</strong>
 						</h1>
 						<div class="description">
-							<p>
-								This is a portal for students to learn from 
-								alumni and for alumni to share their knowledge 
-								in their respective domains.
-							</p>
+							<p>This is a portal for students to learn from alumni and for
+								alumni to share their knowledge in their respective domains.</p>
 						</div>
 					</div>
 				</div>
@@ -79,24 +79,24 @@
 							</div>
 						</div>
 						<div class="form-bottom">
-							<form role="form" action="" method="post" class="login-form">
+							<form role="form" action="/authenticate" method="post" class="login-form">
 								<div class="form-group">
-									<label class="sr-only" for="form-username">Username</label> <input
-										type="text" name="form-username" placeholder="Username..."
+									<label class="sr-only" for="form-username">Email</label> <input
+										type="text" name="email" placeholder="Email..."
 										class="form-username form-control" id="form-username">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="form-password">Password</label> <input
-										type="password" name="form-password" placeholder="Password..."
+										type="password" name="password" placeholder="Password..."
 										class="form-password form-control" id="form-password">
 								</div>
-								<button type="submit" class="btn">Sign in!</button> <br>
-								Not registered yet? <a href="/signup">Sign up</a> now!
+								<button type="submit" class="btn">Sign in!</button>
+								<br> Not registered yet? <a href="/signup">Sign up</a> now!
 							</form>
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -107,9 +107,10 @@
 	<script type="text/javascript"
 		src="/resources/core/js/jquery.backstretch.min.js"></script>
 
-	<script type="text/javascript" src="/resources/core/js/scripts.js"></script>
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/resources/core/js/scripts.js"></script>
+
 	<!--[if lt IE 10]>
             <script src="/resources/core/js/placeholder.js"></script>
         <![endif]-->
